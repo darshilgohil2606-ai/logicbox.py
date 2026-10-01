@@ -1,16 +1,39 @@
-print("welcome to the pattern jenerator and number analyzer")
+print("Welcome to the Pattern Generator and Number Analyzer!")
 
 while True:
-    print("select an optiion")
-    print("1.generate a patten")
-    print("2.analyze a number")
-    print("3.exit")
+    print("\nSelect an option:")
+    print("1. Generate a Pattern")
+    print("2. Analyze a Range of Numbers")
+    print("3. Exit")
 
-
-    choice=int(input("enter your choice"))
+    choice = int(input("Enter your choice: "))
 
     if choice == 1:
-        rows = int(input("enter the number of rows for the pattern"))
-        print("pattern:")
-        for i in range(1,rows+1):
+        rows = int(input("Enter the number of rows for the pattern: "))
+
+        print("\nPattern:")
+        for i in range(1, rows + 1):
             print("*" * i)
+
+    elif choice == 2:
+        start = int(input("\nEnter the start of the range: "))
+        end = int(input("Enter the end of the range: "))
+
+        total = 0
+
+        for num in range(start, end + 1):
+            if num % 2 == 0:
+                print("Number", num, "is Even")
+            else:
+                print("Number", num, "is Odd")
+
+            total = total + num
+
+        print("Sum of all numbers from", start, "to", end, "is:", total)
+
+    elif choice == 3:
+        print("Exiting the program. Goodbye!")
+        break
+
+    else:
+        print("Invalid choice. Please try again.")
